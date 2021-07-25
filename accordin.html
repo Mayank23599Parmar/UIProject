@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 40%;
+            margin: 50px auto;
+
+        }
+
+        .accordian-tab>label {
+            display: block;
+            width: 100%;
+            background-color: blue;
+            color: white;
+            padding: 20px 30px;
+            text-transform: capitalize;
+            position: relative;
+            font-size: 22px;
+            line-height: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            border-top: 1px solid white;
+
+        }
+
+        .accordian-tab>label::after {
+            content: '+';
+            position: absolute;
+            top: 20px;
+    font-size: 30px;
+    right: 20px;
+        }
+
+        .accordian-tab>.accordian-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: all .3s;
+            background-color: #ddd;
+        }
+
+        .accordian-tab>.accordian-content p {
+            padding: 20px;
+            line-height: 25px;
+            font-size: 18px;
+        }
+
+        .accordian-tab>.accordian-toggle {
+            display: none;
+        }
+
+        .accordian-tab>.accordian-toggle:checked~.accordian-content {
+            max-height: 100vh;
+        }
+        .accordian-tab>.accordian-toggle:checked~label::after{
+            content: '-';
+            position: absolute;
+            top: 20px;
+    font-size: 30px;
+    right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="accordian-tab">
+            <input type="radio" id="toggle-1" class="accordian-toggle" name="tabs" >
+            <label for="toggle-1">according -1  used as a placeholder before final copy is available. used as a placeholder before final copy is available. used as a placeholder before final copy is available.</label>
+            <div class="accordian-content">
+                <p>
+                    In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the
+                    visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be
+                    used as a placeholder before final copy is available.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordian-tab">
+            <input type="radio" id="toggle-2" class="accordian-toggle" name="tabs">
+            <label for="toggle-2">according -2</label>
+            <div class="accordian-content">
+                <p>
+                    In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the
+                    visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be
+                    used as a placeholder before final copy is available.
+                </p>
+            </div>
+        </div>
+        <div class="accordian-tab">
+            <input type="radio" id="toggle-3" class="accordian-toggle" name="tabs">
+            <label for="toggle-3">according -3</label>
+            <div class="accordian-content">
+                <p>
+                    In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the
+                    visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be
+                    used as a placeholder before final copy is available.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
