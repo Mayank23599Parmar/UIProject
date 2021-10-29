@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+   
+  .tab-1,.tab-2,.tab-3{
+      opacity: 0;
+      visibility: hidden;
+      transition: all .5s;
+  }
+  .message{
+      opacity: 1;
+      visibility: visible;
+      transition: all .5s;
+  }
+</style>
+</head>
+<body>
+    <div class="parent">
+        <button class="btn" data-tab="tab-1">button 1</button>
+        <button class="btn" data-tab="tab-2">button 2</button>
+        <button class="btn" data-tab="tab-3">button 3</button>
+      </div>
+      <p class="message"> Click on the tabs </p>
+      <p class="tab-1">Tab - 1 </p>
+      <p class="tab-2"> Tab -2</p>
+      <p class="tab-3"> Tab-3 </p>
+</body>
+<script>
+    function showtab(tabs)
+{
+	var tab=tabs;
+	switch(tab)
+    {
+      case "tab-1":
+        document.querySelector('.message').innerHTML = document.querySelector(".tab-1").innerHTML;
+        break;
+      case "tab-2":
+		document.querySelector('.message').innerHTML = document.querySelector(".tab-2").innerHTML;
+        break;
+      case "tab-3":
+		document.querySelector('.message').innerHTML = document.querySelector(".tab-3").innerHTML;
+        break;
+      default:
+		document.querySelector('.message').innerHTML = document.querySelector(".tab-1").innerHTML;
+        break;
+    }
+}
+// let btn= document.querySelectorAll(".btn");
+// btn.forEach(el=>{
+//     el.addEventListener('click',function(){
+//         let data=el.dataset.tab
+//         showtab(data)
+//     })
+// })
+document.querySelector(".parent").addEventListener("click",function(e){
+    if(e.target !== e.currentTarget){
+        let data=e.target.dataset.tab;
+        showtab(data)
+    }
+})
+</script>
+</html>
